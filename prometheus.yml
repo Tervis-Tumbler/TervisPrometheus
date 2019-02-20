@@ -1,0 +1,7 @@
+scrape_configs:
+- metrics_path: /stats/prometheus
+  static_configs:
+  - targets:
+    - images2.tervis.com:9901
+  job_name: envoy
+
