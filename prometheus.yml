@@ -4,4 +4,5 @@ scrape_configs:
   - targets:
     - images2.tervis.com:9901
   job_name: envoy
+  scrape_interval: 10s
 

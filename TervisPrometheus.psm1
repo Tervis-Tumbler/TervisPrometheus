@@ -12,6 +12,7 @@ function Output-PrometheusConfiguration {
             @{
                 job_name = "envoy"
                 metrics_path = "/stats/prometheus"
+                scrape_interval = "10s"
                 static_configs = @(
                     @{
                         targets = @(
