@@ -7,6 +7,7 @@ function Start-Prometheus {
 }
 
 function Output-PrometheusConfiguration {
+    $ComputerName = Get-TervisInDesignServerComputerName
     [PSCustomObject]@{
         scrape_configs = @(
             @{
@@ -17,6 +18,17 @@ function Output-PrometheusConfiguration {
                     @{
                         targets = @(
                             "images2.tervis.com:9901"
+                        )
+                    }
+                )
+            },
+            @{
+                job_name = "wmi_exporter"
+                scrape_interval = "10s"
+                static_configs = @(
+                    @{
+                        targets = @(
+                            "$($ComputerName):9182"
                         )
                     }
                 )

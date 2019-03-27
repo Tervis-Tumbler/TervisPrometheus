@@ -5,4 +5,9 @@ scrape_configs:
     - images2.tervis.com:9901
   job_name: envoy
   scrape_interval: 10s
+- static_configs:
+  - targets:
+    - INF-InDesign02:9182
+  job_name: wmi_exporter
+  scrape_interval: 10s
 
